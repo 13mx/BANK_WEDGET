@@ -1,32 +1,16 @@
 def get_mask_card_number(card_number: str) -> str:
-    """
-    Маскирует номер карты, оставляя первые 4 и последние 4 цифры видимыми, а середину заменяя на звездочки.
-
-    Параметры:
-        card_number (str): Полный номер карты, который необходимо маскировать.
-
-    Возвращает:
-        str: Маскированный номер карты с пробелами для улучшения читаемости.
-    """
-    # Убедитесь, что номер карты не содержит пробелов перед маскированием
     card_number = card_number.replace(" ", "")
-    # Маскировка номера карты с пробелами
-    masked_card_number = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
+    # Измененная маскировка номера карты
+    masked_card_number = f"{card_number[:4]} **** **** {card_number[-4:]}"
     return masked_card_number
 
 
 def get_mask_account_number(account_number: str) -> str:
-    """
-    Маскирует номер счета, оставляя первые 2 и последние 2 цифры видимыми.
-
-    Параметры:
-        account_number (str): Полный номер счета, который необходимо маскировать.
-
-    Возвращает:
-        str: Маскированный номер счета, где середина номера заменена на звездочки для конфиденциальности.
-    """
-    masked_account_number = f"{account_number[:2]}****{account_number[-2:]}"
-    return masked_account_number
+    # Убедимся, что номер счета имеет достаточную длину
+    if len(account_number) < 6:
+        return account_number
+    # Обновленная функция с фиксированным количеством звездочек
+    return f"{account_number[:2]}****{account_number[-4:]}"
 
 
 # Пример использования функций
