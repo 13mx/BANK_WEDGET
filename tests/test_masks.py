@@ -1,5 +1,5 @@
 import pytest
-from src.masks.masks import get_mask_card_number, get_mask_account_number  # Импортируйте свои функции
+from src.masks.masks import get_mask_card_number, get_mask_account_number
 
 
 # Тесты для функции get_mask_card_number

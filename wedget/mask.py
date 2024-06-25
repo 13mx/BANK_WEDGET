@@ -1,15 +1,21 @@
+import re
+
+
 def mask_account_card(info):
-    parts = info.split()
-    # Определяем, является ли информация картой или счетом
-    if "Счет" in info:
-        # Маскировка для счета
-        return f"{parts[0]} **{parts[1][-4:]}"
+    # Регулярное выражение для карты Visa и счета
+    visa_pattern = re.compile(r'Visa (\w+ )*(\d{4}) (\d{4}) (\d{4}) (\d{4})')
+    account_pattern = re.compile(r'Счет (\d+)')
+
+    visa_match = visa_pattern.search(info)
+    account_match = account_pattern.search(info)
+
+    if visa_match:
+        additional_words = visa_match.group(1) if visa_match.group(1) else ''
+        return f"Visa {additional_words}{visa_match.group(2)} {visa_match.group(3)[:2]}** **** {visa_match.group(5)}"
+    elif account_match:
+        account_number = account_match.group(1)
+        return f"Счет **{account_number[-4:]}"
     else:
-        # Маскировка для карты
-        return f"{parts[0]} {parts[1]} {parts[2][:2]}** **** {parts[3]}"
+        raise ValueError("Invalid input format")
 
-
-# Пример использования
-print(mask_account_card("Visa Platinum 7000 7922 8960 6361"))  # Visa Platinum 7000 79** **** 6361
-print(mask_account_card("Счет 73654108430135874305"))  # Счет **4305
-
+# Теперь функция может корректно обрабатывать и маскировать как номера карт V
