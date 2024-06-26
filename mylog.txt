@@ -1,0 +1,5 @@
+2024-06-26 13:41:02.624908: my_function ok
+2024-06-26 13:52:10.639375: my_function ok
+2024-06-26 13:52:10.641385: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 13:52:10.643391: my_function ok
+2024-06-26 13:52:10.650374: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
