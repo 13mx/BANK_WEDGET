@@ -3,13 +3,16 @@ def filter_by_currency(transaction_list, currency_code):
         if transaction['operationAmount']['currency']['code'] == currency_code:
             yield transaction
 
+
 def transaction_descriptions(transaction_list):
     for transaction in transaction_list:
         yield transaction['description']
 
+
 def card_number_generator(start, end):
     for number in range(start, end + 1):
         yield f"{number:0>16}".replace("0", "X")
+
 
 # Пример использования:
 global_transactions = [
