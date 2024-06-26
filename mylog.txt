@@ -15,3 +15,15 @@
 2024-06-26 13:57:58.343235: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
 2024-06-26 13:57:58.346200: my_function ok
 2024-06-26 13:57:58.354870: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:08:53.162702: my_function ok
+2024-06-26 14:08:53.166655: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:08:53.168686: my_function ok
+2024-06-26 14:08:53.177667: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:09:02.166146: my_function ok
+2024-06-26 14:09:02.169138: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:09:02.172132: my_function ok
+2024-06-26 14:09:02.186096: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:09:37.294787: my_function ok
+2024-06-26 14:09:37.296782: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
+2024-06-26 14:09:37.299774: my_function ok
+2024-06-26 14:09:37.309772: my_function error: can only concatenate str (not "int") to str. Inputs: ('a', 3), {}
